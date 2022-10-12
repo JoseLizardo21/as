@@ -6,9 +6,10 @@ const app = express();
 app.set('port', 3000 || process.env.PORT);
 
 //Routes
-
+app.get('/', (req, res)=>{
+    res.send("Hola");
+});
 //Public
-app.use(express.static(path.join(__dirname, 'public')));
 //Starting the server
 app.listen(app.get('port'), ()=>{
     console.log(`Server on port ${app.get('port')}`);
